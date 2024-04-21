@@ -1,7 +1,19 @@
+import { useState } from "react";
+
 import "./App.css";
+import { MyContext } from "./myContext";
+import MyComponent from "./myComponent";
 
 function App() {
-  return <div></div>;
+  const [text, setText] = useState("");
+
+  return (
+    <div>
+      <MyContext.Provider value={{ text, setText }}>
+        <MyComponent />
+      </MyContext.Provider>
+    </div>
+  );
 }
 
 export default App;
